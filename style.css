@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://img.freepik.com/premium-vector/seamless-geometric-pattern-authentic-arabian-style-vector-illustration_151170-1465.jpg?w=900);
+}
+nav{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    background-color: rgb(159, 153, 105,0.3);
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    backdrop-filter: blur(3px);
+    
+    
+}
+.logo a{
+    margin: 5px;
+    text-decoration: none;
+    color: #0197F6;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-left: 20px;
+    
+}
+nav li{
+    display: flex;
+    display: inline;
+    margin: 10px;
+}
+
+nav  li a{
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 19px;
+    color:#ff0404;
+    font-weight: bold;
+    padding: 0px 25px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+nav  li a:hover{
+    background-color: #fff;
+    color: rgb(147, 150, 15);
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px #A22522;
+}
+.contain{
+    width: 965px;
+    background: rgba(0, 0, 0, 0.267);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 15px;
+}
+.contain h2{
+    text-align: center;
+    color: #A22522;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+img{
+    filter: drop-shadow(6px 6px 5px rgb(0, 0, 0));
+    display: block;  
+}
+.contain1{
+    width: 960px;
+    height: 640px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.contain2{
+    width: 960px;
+    height: 579px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.overlay{
+    position: absolute;
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+.contain1:hover .overlay{
+    opacity: 1;
+}
+.contain2:hover .overlay{
+    opacity: 1;
+}
+.overlay p{
+    color: rgb(239, 239, 255);
+    font-weight: 400;
+    text-transform: capitalize;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+}
+.overlaybottom{
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(159, 153, 105,0.6);
+    backdrop-filter: blur(2px);
+
+}
+.contain1:hover .overlaybottom{
+   height: 60%;
+}
+.contain2:hover .overlaybottom{
+    height: 60%;
+ }
+.navbar-toggler{
+    display: none;
+    height: min-content;
+    margin: 18px 10px 0 0;
+    cursor: pointer;
+
+}
+.navbar-toggler .bar{
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background: black;
+    border-radius: 10%;
+    transition: 0.4s;
+}
+input{
+    display: none;
+}
+input:checked ~ nav ul {
+    transform: translateY(0);
+}
+input:checked ~ nav .navbar-toggler {
+    margin-top: 35px;
+}
+input:checked ~ nav .navbar-toggler .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg);
+}
+input:checked ~ nav .navbar-toggler .bar:nth-child(2){
+    display: none;
+}
+input:checked ~ nav .navbar-toggler .bar:nth-child(3){
+    transform: rotate(-45deg);
+}
+::selection{
+    background-color: rgb(99, 42, 165);
+    color: #fff;
+}
+
+@media (min-width:841px) and (max-width:1200px) {
+    img{
+        width: 670px;
+    }
+    .contain{
+        width: 673px;
+    }
+    .contain1{
+        width: 670px;
+        height: auto;
+        
+    }
+    .contain2{
+        width: 670px;
+        height: auto;
+        
+    }
+    .overlay p{
+        font-size: 13px;
+        font-weight: normal;
+    }
+    .overlay{
+        overflow-y: auto;
+    }
+}
+@media (min-width:676px) and (max-width:848px){
+    img{
+        width: 540px;
+        }
+        .contain{
+            width: 543px;
+        }
+      nav ul li a{
+        padding: 0px 5px;
+    }  
+    .contain h2{
+        font-size:25px
+    }
+    .contain1{
+        width: 540px;
+        height: auto;
+        
+    }
+    .contain2{
+        width: 540px;
+        height: auto;
+        
+    }
+    .overlay p{
+        font-size: 10px;
+        font-weight: normal;
+    }
+    .overlay{
+        overflow-y: auto;
+    }
+}
+@media (max-width:760px){
+    nav ul{
+        display: grid;
+        position: absolute;
+        background: rgb(159, 153, 105,0.3);
+        width: 100%;
+        top: 70px;
+        left: 0;
+        transform: translateY(-120%);
+        z-index: -2;
+        transition: 1s;
+    }
+    nav ul li{
+        padding-left: 35px;
+    }
+    nav ul li a{
+        display: block;
+        text-align: center;
+    }
+    nav ul li a:hover{
+        background-color: #A22522;
+        color: black;
+    }
+    .navbar-toggler{
+        display: grid !important ;
+    }
+    
+}
+@media (min-width:501px) and (max-width:675px) {
+    img{
+        width: 400px;
+    }
+    .contain{
+        width: 403px;
+    }
+    .contain h2{
+        font-size:20px;
+    }
+    .contain1{
+        width: 400px;
+        height: auto;
+        
+    }
+    .contain2{
+        width: 400px;
+        height: auto;
+        
+    }
+    .overlay p{
+        font-size:9px;
+        font-weight: normal;
+    }
+    .overlay{
+        overflow-y: auto;
+    }
+
+}
+@media (min-width:421px) and (max-width:500px) {
+    .logo a{
+        font-size: 26px;
+    }
+    img{
+        width: 340px;
+    }
+    .contain{
+        width: 343px;
+    }
+    .contain h2{
+        font-size: 15px;
+    }
+    .contain1{
+        width: 340px;
+        height: auto;
+        
+    }
+    .contain2{
+        width: 340px;
+        height: auto;
+        
+    }
+    .overlay p{
+        font-size: 8px;
+        font-weight: normal;
+    }
+    .overlay{
+        overflow-y: auto;
+    }
+}
+@media (max-width:420px){
+    .logo a{
+        font-size: 21px;
+    }
+    img{
+    width: 288px;
+    }
+    
+    .contain{
+        width: 291px;
+    }
+    .contain h2{
+        font-size: 15px;
+    }
+    .contain1{
+        width: 288px;
+        height: auto;
+        
+    }
+    .contain2{
+        width: 288px;
+        height: auto;
+        
+    }
+    .overlay p{
+        font-size: 7px;
+        font-weight: normal;
+    }
+    .overlay{
+        overflow-y: auto;
+    }
+    
+}
+@media (max-width:320px){
+    .logo a{
+        font-size: 19px;
+        }
+    img{
+        width: 240px;
+    }
+    .contain{
+        width: 243px;
+    }
+    .contain h2{
+        font-size:13px;
+    }
+    .contain1{
+        width: 240px;
+        height: auto;
+        
+    }
+    .contain2{
+        width: 240px;
+        height: auto;
+        
+    }
+    .overlay p{
+        font-size: 6px;
+        font-weight: normal;
+    }
+    .overlay{
+        overflow-y: auto;
+    }
+
+}
